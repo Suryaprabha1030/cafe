@@ -11,8 +11,8 @@ const Banner = () => {
             DARK CAFE
           </h1>
           <p className="w-3/4   text-center lg:text-start  lg:ps-5 xl:ps-0 ps-0  xl:text-justify  text-lg md:text-xl lg:text-2xl  text-sub font-bold mt-4">
-            The smell of fresh-made coffee is one of the world's greatest
-            inventions!! Rise and grind, it's coffee time!
+            The smell of fresh-made coffee is one of the world&apos;s greatest
+            inventions!! Rise and grind, it&apos;s coffee time!
           </p>
           <div className="space-x-6 mt-8 ms-4">
             <button className="h-10 text-md md:text-lg  lg:text-xl text-logo border-2 border-secondary rounded-lg px-3 ">

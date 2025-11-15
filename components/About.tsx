@@ -24,7 +24,8 @@ const About = () => {
           bustling outside world. Its specialty lies in its rich, bold brews,
           tantalizing the taste buds with deep flavors and robust aromas.
           Patrons often find themselves immersed in conversation or lost in
-          thought amidst the comforting embrace of Dark Cafe's enigmatic setting
+          thought amidst the comforting embrace of Dark Cafe&apos;s enigmatic
+          setting
         </p>
       </section>
       <ul className="flex flex-row gap-5 mt-8 justify-center">

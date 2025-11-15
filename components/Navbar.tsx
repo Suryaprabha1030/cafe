@@ -26,7 +26,7 @@ const Navbar = () => {
           onClick={open}
         />
         <ul
-          className={`w-full md:w-auto flex flex-col border-t-2 border-secondary md:border-t-0  md:flex-row items-center pl-9  md:mt-0 pb-5 md:pl-0 md:pb-0 md:justify-around gap-7 absolute  md:static bg-sub md:bg-primary md:z-auto z-[9]  ${
+          className={`w-full md:w-auto flex flex-col border-t-2 border-secondary md:border-t-0  md:flex-row items-center pl-9  md:mt-0 pb-5 md:pl-0 md:pb-0 md:justify-around gap-7 absolute  md:static bg-sub md:bg-primary md:z-auto z-9  ${
             show ? "top-20" : "top-[-490px]"
           }`}
         >

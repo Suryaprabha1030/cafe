@@ -6,7 +6,7 @@ import ShopCard from "./ShopCard";
 import { products } from "./Product";
 import UserCart from "./UserCart";
 
-const page = () => {
+const Page = () => {
   const [openCart, setOpenCart] = useState<boolean>(false);
   return (
     <div className="w-screen h-screen overflow-x-hidden relative overflow-auto bg-white [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
@@ -29,4 +29,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

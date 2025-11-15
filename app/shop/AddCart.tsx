@@ -23,7 +23,7 @@ const AddCart: React.FC<AddCartProps> = (item) => {
       >
         {" "}
         <Image
-          className="W-[1rem] h-[1rem]"
+          className="w-[1rem] h-[1rem]"
           src="/cart.png"
           alt="coffee"
           width="20"

@@ -32,7 +32,7 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100  text-black">
+    <div className="min-h-screen bg-linear-to-b from-gray-50 to-gray-100  text-black">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Back Button */}
         <button
@@ -68,7 +68,7 @@ export default function CheckoutPage() {
                 Contact Information
               </h2>
               <p className="text-sm text-gray-500 mb-4">
-                We'll use this to contact you about your order
+                We&apos;ll use this to contact you about your order
               </p>
               <div className="space-y-4">
                 <div>
@@ -187,7 +187,7 @@ export default function CheckoutPage() {
             <div className="bg-white p-6 rounded-xl shadow-md">
               <h2 className="text-xl font-semibold mb-2">Payment Method</h2>
               <p className="text-sm text-gray-500 mb-4">
-                Choose how you'd like to pay
+                Choose how you&apos;d like to pay
               </p>
 
               <div className="space-y-3">

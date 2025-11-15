@@ -36,7 +36,7 @@ const Services = () => {
       <section className=" w-3/4 lg:w-5/6  xl:w-4/5 container mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5   gap-10 lg:gap-20 xl:gap-20 justify-items-center   ">
         {data.map((d, index) => (
           <div
-            className="xl:w-44 w-40 w-40   shadow-xl  rounded-lg border-4 border-secondary bg-sub group :mt-5 mt-2 "
+            className="xl:w-44 w-40   shadow-xl  rounded-lg border-4 border-secondary bg-sub group :mt-5 mt-2 "
             key={index}
           >
             <Image

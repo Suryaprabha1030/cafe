@@ -2,9 +2,9 @@ import React from "react";
 
 const Reserve = () => {
   return (
-    <div className="container mx-auto max-w-full bg-primary flex flex-col lg:flex-row justify-center items-center gap-20 lg:gap-40 ">
-      <section className="w-5/6  lg:w-1/3 md:w-3/4 ">
-        <h1 className="text-logo font-logo w-full text-5xl md:text-6xl font-bold pb-5 text-center">
+    <div className="container mx-auto max-w-full max-sm:w-[18rem] sm:max-lg:w-[18rem] bg-primary flex flex-col lg:flex-row justify-center items-center gap-20 lg:gap-40 ">
+      <section className="w-5/6  lg:w-1/3  max-sm:w-full sm:max-lg:w-full">
+        <h1 className="text-logo font-logo w-full text-5xl lg:text-6xl font-bold pb-5 text-center">
           Reservation Here
         </h1>
         <form className=" bg-bgimg  w-full flex flex-col gap-6 pt-5 items-center  rounded-xl pb-10 border-card border-4">
@@ -41,14 +41,14 @@ const Reserve = () => {
               placeholder="Your Email"
             />
             {/* <button className='w-1/3 h-full text-xl border-2 rounded-lg border-secondary text-card'>Reserve</button> */}
-            <button className="w-1/3 h-full text-lg md:text-xl border-2 rounded-lg border-secondary  text-card">
+            <button className="w-1/3 h-full text-lg lg:text-xl border-2 rounded-lg border-secondary  text-card">
               Reserve
             </button>
           </span>
         </form>
       </section>
-      <section className=" w-5/6 lg:w-1/3 md:w-3/4  ">
-        <h1 className="text-logo font-logo w-full text-5xl  md:text-6xl font-bold pb-5 text-center ">
+      <section className=" w-5/6 lg:w-1/3  max-sm:w-full sm:max-lg:w-full    ">
+        <h1 className="text-logo font-logo w-full text-5xl  lg:text-6xl font-bold pb-5 text-center ">
           Location Here
         </h1>
         <iframe

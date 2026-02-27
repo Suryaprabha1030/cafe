@@ -15,18 +15,18 @@ const Page = () => {
       {/* Sections with IDs for scrolling */}
       <div
         id="home"
-        className="w-full flex flex-col items-center justify-center  pt-40 mt-5"
+        className="w-full flex flex-col items-center justify-center  pt-40 mt-5 max-sm:px-[2rem]"
       >
         <Banner />
       </div>
 
-      <div id="about" className="w-[100%]  flex flex-col  pt-20 ">
+      <div id="about" className="w-[100%]  flex flex-col  md:pt-20 ">
         <About />
       </div>
-      <div id="services" className="w-[100%] flex flex-col pt-10">
+      <div id="services" className="w-[100%] flex flex-col  md:pt-10">
         <Services />
       </div>
-      <div id="reserve" className="w-[100%]  flex flex-col pt-20 mb-10">
+      <div id="reserve" className="w-[100%]  flex flex-col  pt-20  mb-10">
         <Reserve />
       </div>
       <Footer />

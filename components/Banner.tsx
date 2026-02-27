@@ -1,8 +1,10 @@
 import React from "react";
 // import banner from "/bg5.jpg";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Banner = () => {
+  const router = useRouter();
   return (
     <div className=" w-full  flex items-center justify-center  ">
       <div className="max-w-full container flex flex-col gap-20 lg:gap-0 lg:flex-row justify-evenly items-start ">
@@ -15,7 +17,12 @@ const Banner = () => {
             inventions!! Rise and grind, it&apos;s coffee time!
           </p>
           <div className="space-x-6 mt-8 ms-4">
-            <button className="h-10 text-md md:text-lg  lg:text-xl text-logo border-2 border-secondary rounded-lg px-3 ">
+            <button
+              className="h-10 text-md md:text-lg  lg:text-xl text-logo border-2 border-secondary rounded-lg px-3 "
+              onClick={() => {
+                router.push("/shop");
+              }}
+            >
               Shop Now
             </button>
             <button className="h-10 text-md md:text-lg lg:text-xl text-logo border-2 border-secondary rounded-lg px-3">
@@ -25,7 +32,7 @@ const Banner = () => {
         </section>
         <div className="w-full lg:w-1/3 flex justify-center items-center pb-10 ">
           <Image
-            className="border-4 border-secondary rounded-xl w-img w-[20rem] xs sm:w-imgsm md:w-imgmd lg:w-img   "
+            className="border-4 border-secondary rounded-xl w-img w-[20rem] max-sm:w-[18rem]  sm:max-lg:w-[18rem] xs  md:w-imgmd lg:w-img   "
             src="/bg5.jpg"
             alt="cofee"
             width={50}

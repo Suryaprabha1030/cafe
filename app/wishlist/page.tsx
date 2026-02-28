@@ -3,14 +3,16 @@ import React, { useState } from "react";
 import ShopNav from "../shop/shopNav";
 import { useWishlist } from "../shop/wishlistContext";
 import ShopCard from "../shop/ShopCard";
+import UserCart from "../shop/UserCart";
 
 const Page = () => {
   const { wishlist } = useWishlist();
   const [openCart, setOpenCart] = useState<boolean>(false);
+
   return (
     <div className="w-screen h-screen overflow-x-hidden overflow-auto bg-white [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       <ShopNav setOpenCart={setOpenCart} />
-      <div className="w-full bg-white grid grid-cols-5 gap-1  px-10 place-items-center py-10">
+      <div className="w-full bg-white grid grid-cols-5 gap-1  max-sm:gap-1 max-sm:grid-cols-1 lg:max-2xl:grid-cols-4 justify-center items-center  md:max-lg:grid-cols-3  sm:max-md:grid-cols-2  px-10 place-items-center py-10">
         {wishlist.map((prod) => (
           <ShopCard
             name={prod.name}
@@ -23,6 +25,7 @@ const Page = () => {
           />
         ))}
       </div>
+      {openCart && <UserCart setOpenCart={setOpenCart} />}
     </div>
   );
 };

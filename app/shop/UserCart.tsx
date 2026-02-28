@@ -10,7 +10,7 @@ const UserCart = ({ setOpenCart }: any) => {
   const { cart } = useWishlist();
   const router = useRouter();
   return (
-    <div className="fixed top-0 right-0 h-full w-[30rem] bg-white shadow-xl z-50 ">
+    <div className="fixed top-0 right-0 h-full max-sm:w-full w-[30rem] bg-white shadow-xl z-50 ">
       <div className="flex flex-row justify-between gap-2 w-full px-3 py-5 sticky top-0 z-[20] bg-white">
         <div className="text-black flex flex-row items-center gap-2">
           <BiShoppingBag className="text-logo w-[1.5rem] h-[1.5rem]" />
@@ -21,13 +21,13 @@ const UserCart = ({ setOpenCart }: any) => {
           onClick={() => setOpenCart(false)}
         />
       </div>
-      <div className="flex-1 overflow-y-auto px-5 py-6 space-y-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="overflow-y-auto h-full px-5 py-6 space-y-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {cart.length > 0 ? (
           cart.map((item) => <CartItem item={item} key={item.id} />)
         ) : (
           <div className="text-center text-gray-500 mt-10">
             Your cart is empty{" "}
-            <BiShoppingBag className="text-logo w-[1.5rem] h-[1.5rem]" />
+            {/* <BiShoppingBag className="text-logo w-[1.5rem] h-[1.5rem]" /> */}
           </div>
         )}
       </div>

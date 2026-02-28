@@ -33,7 +33,7 @@ const ShopCard = ({
   item,
 }: ShopCardProps) => {
   return (
-    <div className="flex flex-col mt-20 relative bg-white border border-gray-300 rounded-lg shadow-2xl w-[15rem] h-[25rem]">
+    <div className="flex flex-col  mt-20  relative bg-white border border-gray-300 rounded-lg shadow-2xl md:max-lg:w-[12rem] lg:max-xl:w-[13rem]  w-[15rem] h-[25rem]">
       <Image
         className="rounded-t-lg w-full  h-[15rem]"
         src={prdtImage}

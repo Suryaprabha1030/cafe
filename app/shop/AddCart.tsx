@@ -15,10 +15,10 @@ interface AddCartProps {
 const AddCart: React.FC<AddCartProps> = (item) => {
   const { addToCart } = useWishlist();
   return (
-    <span className="flex flex-row justify-between text-[0.8rem]">
+    <span className="flex flex-row justify-between items-center text-[0.8rem]">
       <p> ₹ {item.price}</p>
-      <p
-        className="bg-sub text-logo flex flex-row gap-2 rounded-md px-2 items-center justify-center"
+      <button
+        className="bg-sub text-logo py-1 active:scale-105  flex flex-row gap-2 rounded-md px-2 items-center justify-center cursore-pointer "
         onClick={() => addToCart(item)}
       >
         {" "}
@@ -30,7 +30,7 @@ const AddCart: React.FC<AddCartProps> = (item) => {
           height="20"
         />
         <span className="text-[0.85rem]">Add to cart</span>
-      </p>
+      </button>
     </span>
   );
 };

@@ -24,26 +24,26 @@ const CartItem: React.FC<AddCartProps> = ({ item }) => {
   return (
     <div className="flex relative items-center justify-between bg-gradient-to-from-white to-gray-50 border border-gray-200 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 p-5 w-full group">
       {/* Product Image */}
-      <div className="flex items-center gap-4">
-        <div className="w-24 h-24 rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+      <div className="flex items-center w-full gap-4">
+        <div className="w-24 h-24 rounded-xl overflow-hidden border border-gray-200 cursore-pointer shadow-sm">
           <Image
             src={item.image}
             alt={item.name}
             width={100}
             height={100}
-            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+            className="object-cover w-full h-full transition-transform duration-500 "
           />
         </div>
 
         {/* Product Details */}
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 w-[90%]">
           <h2 className="text-md font-semibold text-gray-800 group-hover:text-secondary transition-colors duration-300">
             {item.name}
           </h2>
           <p className="text-xs text-gray-500 line-clamp-2 max-w-xs">
             {item.description}
           </p>
-          <div className="flex flex-row justify-between items-center px-2 pt-2 ">
+          <div className="flex flex-row w-full justify-between items-center px-2 pt-2 ">
             <span className="text-md font-bold text-secondary ">
               ₹ {item.price}
             </span>

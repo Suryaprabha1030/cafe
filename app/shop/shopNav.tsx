@@ -2,14 +2,25 @@
 import React, { useState } from "react";
 
 import Image from "next/image";
-import { HiHeart, HiHome } from "react-icons/hi";
-import { useRouter } from "next/navigation";
+import {
+  HiHeart,
+  HiHome,
+  HiOutlineShoppingCart,
+  HiShoppingBag,
+  HiShoppingCart,
+} from "react-icons/hi";
+import { usePathname, useRouter } from "next/navigation";
 import { useWishlist } from "./wishlistContext";
 import { FaCartShopping } from "react-icons/fa6";
 
 const ShopNav = ({ setOpenCart }: any) => {
   const router = useRouter();
   const { wishlist, cart } = useWishlist();
+  const [active, setActive] = useState(false);
+  const pathname = usePathname();
+
+  const isCartPage = pathname === "/shop";
+  const iswishPage = pathname === "/wishlist";
   return (
     <div className="w-full  flex flex-row items-center max-sm:justify-between sm:justify-center bg-red-200 fixed top-0  z-20">
       <div className="w-full  flex flex-row md:flex-row max-sm:justify-between  justify-between md:px-20 sm:px-10 max-sm:px-5 items-center    md:bg-primary bg-sub">
@@ -28,13 +39,27 @@ const ShopNav = ({ setOpenCart }: any) => {
 
         <ul className="flex  gap-5 md:static   ">
           <button
-            onClick={() => router.push("/")}
+            onClick={() => {
+              setActive(!active);
+              router.push("/");
+            }}
             className="transition-transform duration-200 hover:scale-110 relative"
           >
             <HiHome
               size={36}
-              color="#FFD700"
-              className={`transition-a max-sm:w-[2rem]  duration-300 text-text`}
+              // color="#FFD700"
+              className={`transition-a max-sm:w-[2rem]  text-secondary active:text-card  duration-300 text-text`}
+            />
+
+            {/* optional subtle pulse ring */}
+          </button>
+          <button
+            onClick={() => router.push("/shop")}
+            className="transition-transform duration-200 hover:scale-110 relative"
+          >
+            <HiShoppingBag
+              size={36}
+              className={`transition-a max-sm:w-[2rem]  ${isCartPage ? "text-card" : "text-secondary"}  duration-300 text-text`}
             />
 
             {/* optional subtle pulse ring */}
@@ -45,19 +70,18 @@ const ShopNav = ({ setOpenCart }: any) => {
           >
             <HiHeart
               size={36}
-              color="#FFD700"
-              className={`transition-all max-sm:w-[2rem] duration-300 text-text`}
+              className={`transition-all max-sm:w-[2rem]  ${iswishPage ? "text-card" : "text-secondary"} = duration-300 text-text`}
             />
 
             {/* optional subtle pulse ring */}
             {wishlist.length > 0 && (
-              <span className="absolute -top-[0.5rem] -right-2 rounded-full bg-red-500 rounded-full px-2  animate-pingOnce">
+              <span className="absolute -top-[0.5rem] -right-2 rounded-full  bg-red-500 rounded-full px-2  animate-pingOnce">
                 {wishlist.length}
               </span>
             )}
           </button>
           <button className="relative">
-            <Image
+            {/* <Image
               // className="relative"
               src="/cart.png"
               alt="coffee"
@@ -65,6 +89,11 @@ const ShopNav = ({ setOpenCart }: any) => {
               height="40"
               onClick={() => setOpenCart(true)}
               className={`transition-all max-sm:w-[2rem] relative duration-300 text-text`}
+            /> */}
+            <HiOutlineShoppingCart
+              size={36}
+              onClick={() => setOpenCart(true)}
+              className={`transition-all max-sm:w-[2rem]  text-secondary active:text-card duration-300 text-text`}
             />
             {/* <FaCartShopping
               size={36}

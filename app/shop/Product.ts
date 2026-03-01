@@ -159,7 +159,7 @@ export const products = [
     id: 7,
     name: "Costa Rican Tarrazu",
     price: 25.99,
-    image: "/costa.jpg",
+    image: "/yog.png",
     category: "powder",
     description: "Bright acidity with honey sweetness and clean finish.",
   },

@@ -45,7 +45,7 @@ const CartItem: React.FC<AddCartProps> = ({ item }) => {
           </p>
           <div className="flex flex-row w-full justify-between items-center px-2 pt-2 ">
             <span className="text-md font-bold text-secondary ">
-              ₹ {item.price}
+              ₹ {(item.price * (getItemQty(item.id) || 1)).toFixed(2)}
             </span>
             <div className="flex flex-col items-center gap-3 h-5">
               {/* Quantity Controls */}

@@ -1,6 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import toast, { Toaster } from "react-hot-toast";
+import { useWishlist } from "../shop/wishlistContext";
+import CartItem from "../shop/CartItem";
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -20,7 +23,7 @@ export default function CheckoutPage() {
   const total = subtotal + shipping;
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -28,11 +31,18 @@ export default function CheckoutPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Order placed successfully!");
+    // alert("Order placed successfully!");
+    toast.success("Order placed successfully!");
   };
+
+  const { cart } = useWishlist();
+  const totalPrice = cart.reduce((sum, item) => {
+    return sum + item.price * item.quantity;
+  }, 0);
 
   return (
     <div className="min-h-screen bg-linear-to-b from-gray-50 to-gray-100  text-black">
+      <Toaster position="top-center" />
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Back Button */}
         <button
@@ -184,7 +194,7 @@ export default function CheckoutPage() {
             </div>
 
             {/* Payment Method */}
-            <div className="bg-white p-6 rounded-xl shadow-md">
+            {/* <div className="bg-white p-6 rounded-xl shadow-md">
               <h2 className="text-xl font-semibold mb-2">Payment Method</h2>
               <p className="text-sm text-gray-500 mb-4">
                 Choose how you&apos;d like to pay
@@ -235,7 +245,7 @@ export default function CheckoutPage() {
                   </div>
                 </label>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Section (Order Summary) */}
@@ -244,45 +254,49 @@ export default function CheckoutPage() {
               <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
 
               {/* Items List */}
-              <div className="space-y-3 max-h-64 overflow-y-auto">
+              <div className="space-y-3 max-h-64  overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {/* Example static item */}
-                <div className="flex gap-3">
-                  <div className="w-16 h-16 bg-gray-200 rounded-md" />
-                  <div className="flex-1">
+                {/* <div className="flex gap-3"> */}
+                {/* <div className="w-16 h-16 bg-gray-200 rounded-md" /> */}
+                {/* <div className="flex-1">
                     <div className="font-medium text-sm">Coffee Beans</div>
                     <div className="text-sm text-gray-500">Qty: 2</div>
-                  </div>
-                  <div className="font-semibold">$99.99</div>
-                </div>
+                  </div> */}
+                {/* <div className="font-semibold">$99.99</div> */}
+                {/* </div> */}
+                {cart.map((item) => (
+                  <CartItem item={item} key={item.id} />
+                ))}
               </div>
 
               <hr className="my-4" />
 
               {/* Totals */}
               <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
+                {/* <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span>${subtotal.toFixed(2)}</span>
-                </div>
-                <div className="flex justify-between">
+                  <span>Rs.{totalPrice.toFixed(2)}</span>
+                </div> */}
+                {/* <div className="flex justify-between">
                   <span>Shipping</span>
-                  <span>
-                    {/* {shipping === 0 ? "FREE" : `$${shipping.toFixed(2)}`} */}
-                  </span>
-                </div>
+                  <span> */}
+                {/* {shipping === 0 ? "FREE" : `$${shipping.toFixed(2)}`} */}
+                {/* Rs.100 */}
+                {/* </span> */}
+                {/* </div> */}
 
-                <hr className="my-2" />
+                {/* <hr className="my-2" /> */}
 
                 <div className="flex justify-between font-bold text-lg">
                   <span>Total</span>
-                  <span>${total.toFixed(2)}</span>
+                  <span>Rs.{totalPrice.toFixed(2)}</span>
                 </div>
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full mt-6 bg-secondary text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition"
+                className="w-full mt-6 bg-secondary text-white py-3 rounded-lg font-semibold hover:bg-card3 transition"
               >
                 Place Order
               </button>

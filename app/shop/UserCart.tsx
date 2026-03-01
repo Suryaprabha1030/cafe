@@ -21,7 +21,7 @@ const UserCart = ({ setOpenCart }: any) => {
           onClick={() => setOpenCart(false)}
         />
       </div>
-      <div className="overflow-y-auto h-full px-5 py-6 space-y-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="overflow-y-auto h-screen px-5 py-6 space-y-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {cart.length > 0 ? (
           cart.map((item) => <CartItem item={item} key={item.id} />)
         ) : (
